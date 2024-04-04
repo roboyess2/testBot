@@ -27,7 +27,8 @@ async def process_start_command(message: types.Message):
     if connection is not None:
         try:
             user_id = message.from_user.id
-            query = f"INSERT INTO \"user\" (telegram_id) VALUES ({user_id});"
+            user_name = message.from_user.first_name
+            query = f"INSERT INTO \"user\" (telegram_id, user_name) VALUES ({user_id}, '{user_name}');"
             execute_query(query)  # Выполняем SQL-запрос с помощью соединения
             connection.commit()
         finally:
