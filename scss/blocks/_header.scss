@@ -17,27 +17,29 @@
 
     .header__wrp button:hover {
         transition: .3s;
-        background-color: #fff0ab;
+        background-color: #ecbc97;
     }
 
     .header__nav {
         position: absolute;
-        top: 59px;
+        top: 40px;
         right: 0px;
         background: #fff;
         width: 150px;
-        background-color: #fff0ab;
+        background-color: #ecbc97;
         box-sizing: border-box;
         padding: 10px;
         border-radius: 5px;
         animation-name: fadeInDown;
         animation-duration: 0.5s;
+        animation-fill-mode: both;
     }
 
     .header__nav.active {
         display: block;
         animation-name: fadeInUp;
         animation-duration: 0.5s;
+        animation-fill-mode: both;
     }
 
     .header__nav-title {
@@ -65,17 +67,19 @@
 
     to {
         transform: translate3d(0, 0, 0);
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes fadeInDown {
     from {
-        opacity: 0;
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 
     to {
-        opacity: 1;
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
         display: none;
     }
 }
