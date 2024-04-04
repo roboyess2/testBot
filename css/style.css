@@ -85,4 +85,8 @@ body {
     opacity: 0;
     display: none;
   }
+}
+.main {
+  display: flex;
+  min-height: 90vh;
 }/*# sourceMappingURL=style.css.map */
