@@ -20,8 +20,37 @@ body {
     background-color: #000;
     position: absolute;
     opacity: 0.6;
+    animation: overlayFadeOut;
+    animation-duration: 0.5s;
 }
 
 .block {
     display: block;
+    animation: overlayFadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        transform: translate3d(0, 0px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.6;
+    }
+}
+
+@keyframes overlayFadeOut {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.6;
+        display: block;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
 }
