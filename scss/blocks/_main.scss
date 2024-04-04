@@ -102,35 +102,16 @@
         min-height: 383px;
     }
 
-    .main__current-game-field button {
-        margin: 10px 0 0 0;
-        background-color: transparent;
-        border: none;
-        transform: translateY(-5px);
-        transition: .3s;
-        cursor: pointer;
-        display: block;
-        box-sizing: border-box;
-        border-radius: 100%;
-    }
-
-    .main__current-game-field button:active {
-        // transform: translate3d(0, 5px, 0);
-        // transition: all .1s;
-        // background-color: #a22020;
-    }
-
     .main__current-game-coin {
         width: 300px;
         height: 300px;
         margin: 10px 0 0 0;
         border-radius: 100%;
         background-color: #3d1515;
+        cursor: pointer;
     }
 
     .main__current-game-coin:active {
-        width: 300px;
-        height: 300px;
         transform: translate3d(0, 5px, 0);
         transition: all .3s;
         background-color: #a22020;
