@@ -10,6 +10,7 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         background-color: #000000;
+        z-index: 21;
     }
 
     .header__wrp h1 {
@@ -27,22 +28,30 @@
 
     .header__wrp button:hover {
         transition: .3s;
-        background-color: #ecbc97;
+        background-color: #80a3e5;
+    }
+
+    .header__wrp button:hover:active {
+        transition: none;
+        background-color: #b3ceff;
     }
 
     .header__nav {
         position: absolute;
         top: 86px;
         right: 0px;
-        width: 150px;
+        width: 300px;
         color: #000000;
-        background-color: #ecbc97;
+        background-color: #a4bce9;
         box-sizing: border-box;
         padding: 10px;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
         animation-name: fadeInDown;
         animation-duration: 0.5s;
         animation-fill-mode: both;
+        border: 1px solid #000000;
+        z-index: 21;
     }
 
     .header__nav.active {

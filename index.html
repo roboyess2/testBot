@@ -12,20 +12,37 @@
 
 <body>
     <header class="header">
+        <div class="overlay">
+        </div>
         <div class="header__wrp container">
             <h1>Crypto app</h1>
             <button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
             <nav class="header__nav">
                 <h2 class="header__nav-title">Menu</h2>
                 <ul class="header__nav-list">
+                    <!-- <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li>
                     <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li>
-                    <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li>
-                    <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li>
+                    <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li> -->
+                    <div class="main__games-wrp">
+                        <h2>Mine Coin</h2>
+                        <button>Play</button>
+                    </div>
+                    <div class="main__games-wrp">
+                        <h2>Paint</h2>
+                        <button>Play</button>
+                    </div>
+                    <div class="main__games-wrp">
+                        <h2>Labirinth</h2>
+                        <button>Play</button>
+                    </div>
                 </ul>
             </nav>
         </div>
     </header>
+    
     <main class="main">
+        <div class="overlay">
+        </div>
         <section class="main__games container">
             <div class="main__games-wrp">
                 <h2>Mine Coin</h2>
@@ -40,14 +57,17 @@
                 <button>Play</button>
             </div>
         </section>
-        <section class="main__current-game">
-            <div class="main__current-game-wrp container">
+        <section class="main__current-game container">
+            <div class="main__current-game-wrp">
                 <h2>Game</h2>
+                <div class="main__current-game-field">
+
+                </div>
             </div>
         </section>
     </main>
     <footer class="footer">
-        <div class="container">
+        <div class="footer__wrp container">
             <p>"Права защищены" 2024©️</p>
         </div>
     </footer>
