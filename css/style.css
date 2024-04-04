@@ -13,19 +13,28 @@ body {
 }
 
 .header {
-  padding: 20px 0;
+  color: #fff;
 }
 .header .header__wrp {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+  padding: 20px 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #000000;
+}
+.header .header__wrp h1 {
+  font-size: 36px;
+  margin: 0 0 0 10px;
 }
 .header .header__wrp button {
   padding: 5px 15px;
   background-color: #a9c2f0;
   border-radius: 5px;
   border: none;
+  margin: 0 10px;
 }
 .header .header__wrp button:hover {
   transition: 0.3s;
@@ -33,10 +42,10 @@ body {
 }
 .header .header__nav {
   position: absolute;
-  top: 40px;
+  top: 86px;
   right: 0px;
-  background: #fff;
   width: 150px;
+  color: #000000;
   background-color: #ecbc97;
   box-sizing: border-box;
   padding: 10px;
@@ -60,9 +69,13 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.header .header__nav-item {
+  margin: 8px;
+}
 .header .header__nav-item a {
   text-decoration: none;
   color: #000000;
+  font-size: 18px;
 }
 
 @keyframes fadeInUp {
@@ -88,5 +101,66 @@ body {
 }
 .main {
   display: flex;
-  min-height: 90vh;
+  flex-direction: column;
+}
+.main .main__games {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+}
+.main .main__games-wrp {
+  display: flex;
+  flex-direction: column;
+  min-height: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 25%;
+}
+.main .main__games-wrp h2 {
+  margin: 0 0 10px 0;
+  align-self: center;
+  font-size: 28px;
+}
+.main .main__games-wrp button {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  width: 80px;
+  align-self: center;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.main .main__games-wrp button {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  width: 80px;
+  align-self: center;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.main .main__games-wrp button:hover {
+  background-color: #d49139;
+  color: #000000;
+  transition: 0.25s;
+}
+.main .main__games-wrp button:hover:active {
+  background-color: #ffb95f;
+  transition: none;
+  color: #000000;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.main .main__current-game {
+  min-height: 650px;
 }/*# sourceMappingURL=style.css.map */

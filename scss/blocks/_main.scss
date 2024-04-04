@@ -1,4 +1,72 @@
 .main {
     display: flex;
-    min-height: 90vh;
+    flex-direction: column;
+
+    .main__games {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .main__games-wrp {
+        display: flex;
+        flex-direction: column;
+        min-height: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #fff;border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        width: 25%;
+    }
+
+    .main__games-wrp h2 {
+        margin: 0 0 10px 0;
+        align-self: center;
+        font-size: 28px;
+    }
+
+    .main__games-wrp button {
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        width: 80px;
+        align-self: center;
+        cursor: pointer;
+        font-size: 20px;
+        border: none;
+        padding: 5px 10px;
+        box-sizing: border-box;
+    }
+
+    .main__games-wrp button {
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        width: 80px;
+        align-self: center;
+        cursor: pointer;
+        font-size: 20px;
+        border: none;
+        padding: 5px 10px;
+        box-sizing: border-box;
+    }
+
+    .main__games-wrp button:hover {
+        background-color: #d49139;
+        color: #000000;
+        transition: .25s;
+    }
+
+    .main__games-wrp button:hover:active {
+        background-color: #ffb95f;
+        transition: none;
+        color: #000000;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .main__current-game {
+        min-height: 650px;
+    }
 }
