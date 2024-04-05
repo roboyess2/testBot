@@ -1,0 +1,40 @@
+.labirinth__game {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.labirinth__game h1 {
+    text-align: center;
+}
+
+.labirinth__game p {
+    text-align: center;
+}
+
+.labirinth__game input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.labirinth__game button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.labirinth__game button:hover {
+    background-color: #0056b3;
+}
+
+.labirinth__game #message {
+    margin-top: 20px;
+}
