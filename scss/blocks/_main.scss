@@ -114,8 +114,7 @@
     }
 
     .main__current-game-coin:active {
-        transform: translate3d(0, 5px, 0);
-        transition: all .3s;
+        transition: all .1s;
         background-color: #a22020;
         border: 3px solid #a22020;
     }
