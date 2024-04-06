@@ -11,7 +11,9 @@
 
 body {
     background: #33CCCC; /* Fallback */
-    animation: color 9s infinite linear;
+    animation: startPage, 1s, 0, 0, 1;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: color 11s infinite linear;
     text-align: center;
 }
 
@@ -32,9 +34,6 @@ body {
     animation: overlayFadeIn;
     animation-duration: 0.5s;
 }
-
-
-
 
 @keyframes overlayFadeIn {
     from {
@@ -58,6 +57,18 @@ body {
     to {
         transform: translate3d(0, 0, 0);
         opacity: 0;
+    }
+}
+
+@keyframes startPage {
+    from {
+        transform: translate3d(0, 0px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }
 
@@ -86,3 +97,4 @@ body {
         background: #33CCCC;
     }
 }
+

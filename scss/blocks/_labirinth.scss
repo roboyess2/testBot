@@ -1,4 +1,49 @@
 .labirinth {
     display: none;
+
+    h2 {
+        margin: 0 0 5px 0;
+        font-size: 26px;
+    }
+    h3 {
+        margin: 0 0 5px 0;
+        font-size: 24px;
+    }
+    p {
+        margin: 0 0 5px 0;
+        font-size: 24px;
+    }
+    input {
+        margin: 0 0 20px;
+        box-sizing: border-box;
+        outline: none;
+        padding: 10px;
+        border: none;
+        font-size: 22px;
+        border-radius: 10px;
+        width: 300px;
+        align-self: center;
+    }
+
+    button {
+        box-sizing: border-box;
+        background-color: #000;
+        color: #fff;
+        font-size: 22px;
+        border-radius: 10px;
+        padding: 10px 13px;
+        width: 200px;
+        align-self: center;
+        border: none;
+        margin: 0 0 10px 0;
+    }
+
+    button:hover {
+        background-color: #4769ff;
+        outline: 1px solid #000;
+        color: #000000;
+        transition: .3s;
+    }
+
 }
 

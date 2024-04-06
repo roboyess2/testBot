@@ -11,7 +11,9 @@
 
 body {
   background: #33CCCC; /* Fallback */
-  animation: color 9s infinite linear;
+  animation: startPage, 1s, 0, 0, 1;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: color 11s infinite linear;
   text-align: center;
 }
 
@@ -52,6 +54,16 @@ body {
   to {
     transform: translate3d(0, 0, 0);
     opacity: 0;
+  }
+}
+@keyframes startPage {
+  from {
+    transform: translate3d(0, 0px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 @keyframes color {
@@ -281,11 +293,57 @@ body {
   display: none;
 }
 .game .game-block {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+.paint {
+  display: none;
 }
 
 .labirinth {
   display: none;
+}
+.labirinth h2 {
+  margin: 0 0 5px 0;
+  font-size: 26px;
+}
+.labirinth h3 {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+}
+.labirinth p {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+}
+.labirinth input {
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px;
+  border: none;
+  font-size: 22px;
+  border-radius: 10px;
+  width: 300px;
+  align-self: center;
+}
+.labirinth button {
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 10px;
+  padding: 10px 13px;
+  width: 200px;
+  align-self: center;
+  border: none;
+  margin: 0 0 10px 0;
+}
+.labirinth button:hover {
+  background-color: #4769ff;
+  outline: 1px solid #000;
+  color: #000000;
+  transition: 0.3s;
 }
 
 footer {
