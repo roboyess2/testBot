@@ -44,15 +44,15 @@
         <section class="main__games container">
             <div class="main__games-wrp">
                 <h2>Mine Coin</h2>
-                <button>Play</button>
+                <button id="miner">Play</button>
             </div>
             <div class="main__games-wrp">
                 <h2>Paint</h2>
-                <button>Play</button>
+                <button id="">Play</button>
             </div>
             <div class="main__games-wrp">
                 <h2>Labirinth</h2>
-                <button type="button" id="main__games-labirinth-btn">Play</button>
+                <button id="labirinth">Play</button>
             </div>
         </section>
         <section class="main__current-game container">
@@ -63,9 +63,24 @@
                     <img class="main__current-coin" src="./img/coin.png" alt="coin">
                 </div>
             </div>
+
+        </section>
+        <section class="game">
             <div class="main__current-game-field">
-                <h2>Mine Coin</h2>
-                <img id="minerBtn" class="main__current-game-coin" src="./img/coin.png" alt="coin">
+                <div class="miner container">
+                    <h2>Mine Coin</h2>
+                    <img id="minerBtn" class="main__current-game-coin" src="./img/coin.png" alt="coin">
+                </div>
+                <div class="paint container">
+                    <h2>Paint</h2>
+                </div>
+                <div class="labirinth container">
+                    <h1>Угадай число</h1>
+                    <p>Угадайте число от 1 до <span id="maxNumber" data-value="0"></span></p>
+                    <input type="number" id="labirinthGuess">
+                    <button id="checkButton">Проверить</button>
+                    <p id="message"></p>
+                </div>
             </div>
         </section>
     </main>

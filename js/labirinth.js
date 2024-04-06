@@ -1,52 +1,70 @@
 'use strict';
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("main__games-labirinth-btn").addEventListener("click", function () {
-        window.location.href = "html/labirinth.html";
-    });
-});
+
+const labirinthBtn = document.getElementById("labirinth");
+const labirinthGame = document.querySelector(".labirinth");
+
+labirinthBtn.addEventListener("click", () => {
+    labirinthGame.classList.add("game-block")
+})
+
 let secretNumber;
-let maxNumber = 10;
+let maxNumber = 2;
 let attempts = 1;
 let level = 1;
+let maxNumberEl = document.getElementById("maxNumber");
+let startBonus = 10;
+maxNumberEl.dataset.value = maxNumber;
+maxNumberEl.innerText = maxNumberEl.dataset.value
+console.log(maxNumberEl.dataset.value);
+
+let messageEl = document.getElementById("message");
 
 function generateSecretNumber() {
     secretNumber = Math.floor(Math.random() * maxNumber) + 1;
+    console.log(secretNumber)
 }
 
-document.getElementById("checkButton").addEventListener("click", function() {
-    let guess = parseInt(document.getElementById("labirinth__game-guessInput").value);
+const checkButton = document.getElementById("checkButton");
+checkButton.addEventListener("click", function () {
+    let guess = parseInt(document.getElementById("labirinthGuess").value);
     if (guess === secretNumber) {
-        document.getElementById("message").innerText = `Поздравляем! Вы угадали число ${secretNumber}`;
+        messageEl.innerText = `Поздравляем! Вы угадали число ${secretNumber}`;
         if (level < 5) {
+            scoreCounter.dataset.score = Number(scoreCounter.dataset.score) + startBonus * level;
+            scoreCounter.textContent = scoreCounter.dataset.score;
             level++;
             attempts += 2;
-            maxNumber *= 10;
-            document.getElementById("message").innerText += `\nПереходите на уровень ${level}`;
-            document.getElementById("maxNumber").innerText = maxNumber;
-            document.getElementById("labirinth__game-guessInput").value = "";
+            maxNumber += 10;
+            messageEl.innerText += `\nПереходите на уровень ${level}`;
+            maxNumberEl.dataset.value = maxNumber;
+            maxNumberEl.innerText = maxNumberEl.dataset.value
+            document.getElementById("labirinthGuess").value = "";
             generateSecretNumber();
         } else {
-            document.getElementById("message").innerText += "\nВы прошли все уровни!";
+            scoreCounter.dataset.score = Number(scoreCounter.dataset.score) + startBonus * level;
+            scoreCounter.textContent = scoreCounter.dataset.score;
+            messageEl.innerText += "\nВы прошли все уровни!";
         }
     } else {
         attempts--;
         if (attempts === 0) {
-            document.getElementById("message").innerText = "Вы использовали все попытки, попробуйте снова через 5 минут";
-            document.getElementById("labirinth__game-guessInput").disabled = true;
-            setTimeout(resetGame, 300000); // 5 минут в миллисекундах
+            messageEl.innerText = "Вы использовали все попытки, попробуйте снова через 10 секунд";
+            document.getElementById("labirinthGuess").disabled = true;
+            setTimeout(resetGame, 10000); // 10 секунд в миллисекундах
         } else {
-            document.getElementById("message").innerText = `Неверно! У вас осталось ${attempts} попыток`;
+            messageEl.innerText = `Неверно! У вас осталось ${attempts} попыток`;
         }
     }
 });
 
 function resetGame() {
     document.getElementById("labirinth__game-guessInput").disabled = false;
-    document.getElementById("message").innerText = "";
-    attempts = 1;
-    maxNumber = 10;
+    messageEl.innerText = "";
+    attempts = 3;
+    maxNumber = 2;
     level = 1;
-    document.getElementById("maxNumber").innerText = maxNumber;
+    maxNumberEl.dataset.value = 2;
+    maxNumberEl.innerText = maxNumberEl.dataset.value;
     generateSecretNumber();
 }
 
