@@ -13,7 +13,7 @@ labirinthBtn.addEventListener("click", () => {
 
 let secretNumber;
 let maxNumber = 2;
-let attempts = 1;
+let attempts = 3;
 let level = 1;
 let levelEl = document.querySelector('.level');
 levelEl.textContent = 'Уровень 1';

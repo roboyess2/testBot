@@ -282,12 +282,8 @@ body {
   margin: 10px 0 0 0;
   border-radius: 100%;
   background-color: #3d1515;
+  outline: 3px solid #3d1515;
   cursor: pointer;
-}
-.game .main__current-game-coin:active {
-  transition: all 0.1s;
-  background-color: #a22020;
-  border: 3px solid #a22020;
 }
 .game .miner {
   display: none;
@@ -326,6 +322,7 @@ body {
   border-radius: 10px;
   width: 300px;
   align-self: center;
+  text-align: center;
 }
 .labirinth button {
   box-sizing: border-box;
@@ -344,6 +341,10 @@ body {
   outline: 1px solid #000;
   color: #000000;
   transition: 0.3s;
+}
+.labirinth button:hover:active {
+  background-color: #647ff3;
+  transition: none;
 }
 
 footer {

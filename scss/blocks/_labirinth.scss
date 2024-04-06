@@ -23,6 +23,7 @@
         border-radius: 10px;
         width: 300px;
         align-self: center;
+        text-align: center;
     }
 
     button {
@@ -45,5 +46,9 @@
         transition: .3s;
     }
 
+    button:hover:active {
+        background-color: #647ff3;
+        transition: none;
+    }
 }
 
