@@ -86,3 +86,4 @@ function increaseScore(startBonus, level) {
 }
 
 generateSecretNumber();
+

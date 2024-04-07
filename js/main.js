@@ -8,6 +8,7 @@ const overlayEl = document.querySelector('.overlay');
 menuBtn.addEventListener('click', () => {
     headerNav.classList.toggle('active');
     overlayEl.classList.toggle('block');
+    
 })
 
 overlayEl.addEventListener('click', () => {
@@ -17,30 +18,6 @@ overlayEl.addEventListener('click', () => {
     }
 })
 
-function save() {
-    localStorage.setItem("coins", coins);
-    localStorage.setItem("clickcoin", clickcoin);
-}
-if (localStorage.getItem("coins") == null) {
-    var coins = 0;
-} else {
-    var coins = parseInt(localStorage.getItem("coins"));
-}
-if (localStorage.getItem("clickcoin") == null) {
-    var clickcoin = 1;
-} else {
-    var clickcoin = parseInt(localStorage.getItem("clickcoin"));
-}
-
 // Функционал для кнопки майнера(чтобы у Серёги открылся)
 
-const deviceAgent = navigator.userAgent.toLowerCase();
-const agentID = deviceAgent.match(/iphone|ipad|ipod/);
-if (agentID) {
-    console.log(true)
-    menuBtn.addEventListener('touchstart', () => {
-        headerNav.classList.toggle('active');
-        overlayEl.classList.toggle('block');
-    })
-};
-console.log(deviceAgent)
+

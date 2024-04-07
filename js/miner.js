@@ -1,4 +1,6 @@
 "use strict";
+
+
 const minerBtn = document.getElementById("miner");
 const minerGame = document.querySelector('.miner');
 const minerCoin = document.getElementById('minerBtn');
@@ -8,7 +10,7 @@ minerCoin.addEventListener('click', () => {
     scoreCounter.textContent = scoreCounter.dataset.score;
 })
 
-minerBtn.addEventListener('click', () => {
+minerBtn.addEventListener('click', (ev) => {
     if (labirinthGame.classList.contains('game-block') || paintGame.classList.contains('game-block')) {
         labirinthGame.classList.remove('game-block');
         paintGame.classList.remove('game-block');
@@ -19,4 +21,5 @@ minerBtn.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     minerGame.classList.add('game-block')
 })
+
 
