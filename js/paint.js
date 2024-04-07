@@ -1,5 +1,4 @@
 const paintGame = document.querySelector('.paint');
-
 const paintBtn = document.getElementById('paint');
 
 paintBtn.addEventListener('click', () => {

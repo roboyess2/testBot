@@ -31,3 +31,14 @@ if (localStorage.getItem("clickcoin") == null) {
 } else {
     var clickcoin = parseInt(localStorage.getItem("clickcoin"));
 }
+
+const deviceAgent = navigator.userAgent.toLowerCase();
+const agentID = deviceAgent.match(/iphone|ipad|ipod/);
+if (agentID) {
+    console.log(true)
+    menuBtn.addEventListener('touchstart', () => {
+        headerNav.classList.toggle('active');
+        overlayEl.classList.toggle('block');
+    })
+};
+console.log(deviceAgent)
