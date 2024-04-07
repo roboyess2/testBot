@@ -32,6 +32,8 @@ if (localStorage.getItem("clickcoin") == null) {
     var clickcoin = parseInt(localStorage.getItem("clickcoin"));
 }
 
+// Функционал для кнопки майнера(чтобы у Серёги открылся)
+
 const deviceAgent = navigator.userAgent.toLowerCase();
 const agentID = deviceAgent.match(/iphone|ipad|ipod/);
 if (agentID) {

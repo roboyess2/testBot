@@ -37,31 +37,18 @@
         background-color: #000;
         color: #fff;
         border-radius: 5px;
-        width: 80px;
+        width: 100px;
         align-self: center;
         cursor: pointer;
         font-size: 20px;
         border: none;
-        padding: 5px 10px;
-        box-sizing: border-box;
-    }
-
-    .main__games-wrp button {
-        background-color: #000;
-        color: #fff;
-        border-radius: 5px;
-        width: 80px;
-        align-self: center;
-        cursor: pointer;
-        font-size: 20px;
-        border: none;
-        padding: 5px 10px;
-        box-sizing: border-box;
+        padding: 20px 10px;
     }
 
     .main__games-wrp button:hover {
         background-color: #d49139;
         color: #000000;
+        outline: 1px solid #000;
         transition: .25s;
     }
 
