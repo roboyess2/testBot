@@ -12,7 +12,7 @@ minerCoin.addEventListener('click', (event) => {
 });
 
 
-if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+if (/iPad|iPhone|iPod/.match(navigator.userAgent)) {
     minerBtn.addEventListener('touchstart', (event) => {
        
         if (event.target === minerBtn) {
