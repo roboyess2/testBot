@@ -81,6 +81,19 @@
         color: #000000;
         font-size: 18px;
     }
+
+    .main__games-wrp button {
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        width: 100px;
+        align-self: center;
+        cursor: pointer;
+        font-size: 20px;
+        border: none;
+        padding: 20px 10px;
+        outline: 1px solid #000;
+    }
 }
 
 @keyframes fadeInUp {
