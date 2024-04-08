@@ -1,6 +1,6 @@
 let scoreCounter = document.getElementById('scoreCounter');
 
-const deviceAgent = navigator.userAgent.toLowerCase();
+/*const deviceAgent = navigator.userAgent.toLowerCase();
 const agentID = deviceAgent.match(/iphone|ipad|ipod/);
 if (agentID) {
     minerBtn.addEventListener('touchstart', () => {
@@ -24,4 +24,4 @@ if (agentID) {
         }
         labirinthGame.classList.add("game-block")
     })
-};
+};*/
