@@ -3,11 +3,11 @@ ratingProgress.disabled = true;
 const leagueName = document.getElementById('leagueName');
 console.log(leagueName)
 
-const bronze = 10;
-const silver = 30;
-const gold = 60;
-const platina = 90;
-const dimond = 100;
+const bronze = 3000;
+const silver = 100_000;
+const gold = 1_000_000;
+const platina = 2_000_000;
+const dimond = 10_000_000;
 
 ratingProgress.value = scoreCounter.dataset.score
 
@@ -16,10 +16,6 @@ leagueName.addEventListener('', () => {
 })
 
 const checkLeagueButton = document.getElementById("checkLeague");
-
-checkLeagueButton.addEventListener('click', () => {
-    checkLeague(scoreCounter.dataset.score)
-})
 
 function checkLeague(score) {
     if (score <= bronze) {

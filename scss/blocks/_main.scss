@@ -64,13 +64,45 @@
         flex-direction: column;
         align-content: center;
     }
-    .main__rating input[type="range"] {
-        width: 60%;
+    input[type='range'] {
         align-self: center;
+        overflow: hidden;
+        width: 60%;
+        -webkit-appearance: none;
+        background-color: #807e78;
+        border-radius: 5px;
+        outline: 1px solid #000;
+        margin: 10px 0;
+        -webkit-min-device-pixel-ratio: 0;
+        transition: all .3s ease-in;
+      }
+
+    .main__rating input[type="range"]:disabled {
+        display: block;
         color: #000;
-        background-color: #000;
-        margin: 0 0 10px 0;
+        background-color: #b35959;
+        overflow: hidden;
+        
     }
+
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        color: #0bffde;
+        margin-top: -1px;
+        border-radius: 5px;
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        cursor: ew-resize;
+        background: #000000;
+        box-shadow: -83px 0 0 80px #a7f6ff;
+        border-radius: 5px;
+      }
+  
 
     .main__rating button {
         align-self: center;

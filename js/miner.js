@@ -19,6 +19,8 @@ function openMiner() {
         paintGame.classList.remove('game-block');
     }
     minerGame.classList.add('game-block');
+    overlayEl.classList.remove('block');
+    headerNav.classList.remove('active');
 }
 
 // if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {

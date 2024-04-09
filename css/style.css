@@ -11,8 +11,6 @@
 
 body {
   background: #33CCCC; /* Fallback */
-  animation: startPage, 1s, 0, 0, 1;
-  animation: name duration timing-function delay iteration-count direction fill-mode;
   animation: color 11s infinite linear;
   text-align: center;
 }
@@ -134,7 +132,6 @@ body {
   animation-duration: 0.5s;
   animation-fill-mode: both;
   border: 1px solid #000000;
-  z-index: 21;
 }
 .header .header__nav.active {
   display: block;
@@ -174,23 +171,27 @@ body {
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0, 30px, 0);
+    transform: translate3d(300px, 0, 0);
     opacity: 0;
+    z-index: -1;
   }
   to {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    z-index: 21;
   }
 }
 @keyframes fadeInDown {
   from {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    z-index: 21;
   }
   to {
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(300px, 0px, 0);
     opacity: 0;
     display: none;
+    z-index: -1;
   }
 }
 .main {
@@ -253,12 +254,39 @@ body {
   flex-direction: column;
   align-content: center;
 }
-.main .main__rating input[type=range] {
-  width: 60%;
+.main input[type=range] {
   align-self: center;
+  overflow: hidden;
+  width: 60%;
+  -webkit-appearance: none;
+  background-color: #807e78;
+  border-radius: 5px;
+  outline: 1px solid #000;
+  margin: 10px 0;
+  -webkit-min-device-pixel-ratio: 0;
+  transition: all 0.3s ease-in;
+}
+.main .main__rating input[type=range]:disabled {
+  display: block;
   color: #000;
-  background-color: #000;
-  margin: 0 0 10px 0;
+  background-color: #b35959;
+  overflow: hidden;
+}
+.main input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  color: #0bffde;
+  margin-top: -1px;
+  border-radius: 5px;
+}
+.main input[type=range]::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: ew-resize;
+  background: #000000;
+  box-shadow: -83px 0 0 80px #a7f6ff;
+  border-radius: 5px;
 }
 .main .main__rating button {
   align-self: center;

@@ -11,8 +11,6 @@
 
 body {
     background: #33CCCC; /* Fallback */
-    animation: startPage, 1s, 0, 0, 1;
-    animation: name duration timing-function delay iteration-count direction fill-mode;
     animation: color 11s infinite linear;
     text-align: center;
 }

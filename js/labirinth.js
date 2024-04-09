@@ -9,6 +9,8 @@ function openLabirinth() {
         paintGame.classList.remove('game-block');
     }
     labirinthGame.classList.add("game-block")
+    overlayEl.classList.remove('block');
+    headerNav.classList.remove('active');
 }
 
 // labirinthBtn.addEventListener("click", () => {
