@@ -59,6 +59,24 @@
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
+    .main__rating {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    .main__rating input[type="range"] {
+        width: 60%;
+        align-self: center;
+        color: #000;
+        background-color: #000;
+        margin: 0 0 10px 0;
+    }
+
+    .main__rating button {
+        align-self: center;
+        padding: 10px;
+    }
+
     .main__current-game {
         width: 100%;
     }

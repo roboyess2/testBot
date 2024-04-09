@@ -25,15 +25,15 @@
                     <li class="header__nav-item"><a href="#">Lorem, ipsum.</a></li> -->
                     <div class="main__games-wrp">
                         <h2>Mine Coin</h2>
-                        <button id="miner">Play</button>
+                        <button id="miner" onclick="openMiner()">Play</button>
                     </div>
                     <div class="main__games-wrp">
                         <h2>Paint</h2>
-                        <button id="paint">Play</button>
+                        <button id="paint" onclick="openPaint()">Play</button>
                     </div>
                     <div class="main__games-wrp">
                         <h2>Labirinth</h2>
-                        <button id="labirinth">Play</button>
+                        <button id="labirinth" onclick="openLabirinth()">Play</button>
                     </div>
                 </ul>
             </nav>
@@ -41,20 +41,14 @@
     </header>
 
     <main class="main">
-        <!--<section class="main__games container">
-            <div class="main__games-wrp">
-                <h2>Mine Coin</h2>
-                <button id="miner">Play</button>
-            </div>
-            <div class="main__games-wrp">
-                <h2>Paint</h2>
-                <button id="paint">Play</button>
-            </div>
-            <div class="main__games-wrp">
-                <h2>Labirinth</h2>
-                <button id="labirinth">Play</button>
-            </div>
-        </section>-->
+        <section class="main__rating">
+            <h2>Rating</h2>
+            <h3>League</h3>
+            <p id="leagueName"></p>
+            
+            <input id="ratingProgress" type="range" min="0" >
+            <button id="checkLeague" type="button" onclick="checkLeague()">Check</button>
+        </section>
         <section class="main__current-game container">
             <div class="main__current-game-wrp">
                 <h2>Game</h2>
@@ -93,6 +87,7 @@
 
 
     <script src="./js/main.js"></script>
+    <script src="./js/rating.js"></script>
     <script src="./js/miner.js"></script>
     <script src="./js/paint.js"></script>
     <script src="./js/labirinth.js"></script>

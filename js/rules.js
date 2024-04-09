@@ -1,4 +1,5 @@
 let scoreCounter = document.getElementById('scoreCounter');
+let SCORE = scoreCounter.dataset.score;
 
 const deviceAgent = navigator.userAgent.toLowerCase();
 const agentID = deviceAgent.match(/iphone|ipad|ipod/);

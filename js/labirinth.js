@@ -3,13 +3,21 @@
 const labirinthBtn = document.getElementById("labirinth");
 const labirinthGame = document.querySelector(".labirinth");
 
-labirinthBtn.addEventListener("click", () => {
+function openLabirinth() {
     if (minerGame.classList.contains('game-block') || paintGame.classList.contains('game-block')) {
         minerGame.classList.remove('game-block');
         paintGame.classList.remove('game-block');
     }
     labirinthGame.classList.add("game-block")
-})
+}
+
+// labirinthBtn.addEventListener("click", () => {
+//     if (minerGame.classList.contains('game-block') || paintGame.classList.contains('game-block')) {
+//         minerGame.classList.remove('game-block');
+//         paintGame.classList.remove('game-block');
+//     }
+//     labirinthGame.classList.add("game-block")
+// })
 
 let secretNumber;
 let maxNumber = 2;
@@ -83,6 +91,8 @@ function levelIncrease() {
 function increaseScore(startBonus, level) {
     scoreCounter.dataset.score = Number(scoreCounter.dataset.score) + startBonus * level;
     scoreCounter.textContent = scoreCounter.dataset.score;
+    ratingProgress.value = scoreCounter.dataset.score;
+    checkLeague(scoreCounter.dataset.score)
 }
 
 generateSecretNumber();
