@@ -13,14 +13,6 @@ function openLabirinth() {
     headerNav.classList.remove('active');
 }
 
-// labirinthBtn.addEventListener("click", () => {
-//     if (minerGame.classList.contains('game-block') || paintGame.classList.contains('game-block')) {
-//         minerGame.classList.remove('game-block');
-//         paintGame.classList.remove('game-block');
-//     }
-//     labirinthGame.classList.add("game-block")
-// })
-
 let secretNumber;
 let maxNumber = 2;
 let attempts = 3;
@@ -36,13 +28,29 @@ let messageEl = document.getElementById("message");
 let labirinthGuess = document.getElementById("labirinthGuess");
 
 function generateSecretNumber() {
-    secretNumber = Math.floor(Math.random() * maxNumber) + 1;
+    secretNumber = Math.floor(Math.random() * maxNumber) + level;
     console.log(secretNumber)
 }
 
-const checkButton = document.getElementById("checkButton");
+function updateInputRange() {
+    labirinthGuess.min = 1;
+    labirinthGuess.max = maxNumber;
+}
+
+function levelIncrease() {
+    level++;
+    attempts += 1;
+    maxNumber += 3;
+    updateInputRange();
+}
+let messageShown = false; // Дополнительная переменная для отслеживания отображения сообщения
+
 checkButton.addEventListener("click", function () {
     let guess = parseInt(labirinthGuess.value);
+    if (isNaN(guess) || guess < 1 || guess > maxNumber) {
+        messageEl.innerText = `Пожалуйста, введите число от 1 до ${maxNumber}`;
+        return;
+    }
     if (guess === secretNumber) {
         messageEl.innerText = `Поздравляем! Вы угадали число ${secretNumber}`;
         if (level < 5) {
@@ -61,18 +69,21 @@ checkButton.addEventListener("click", function () {
         }
     } else {
         attempts--;
-        if (attempts === 0) {
+        if (attempts === 0 && !messageShown) { // Проверка, было ли уже показано сообщение
             messageEl.innerText = "Вы использовали все попытки, попробуйте снова через 10 секунд";
             labirinthGuess.disabled = true;
-            setTimeout(resetGame, 10000); // 10 секунд в миллисекундах
-        } else {
+            messageShown = true; // Устанавливаем флаг, что сообщение было показано
+            setTimeout(function() {
+                messageShown = false; // После таймера сбрасываем флаг
+                resetGame(); // Вызываем функцию resetGame после истечения таймера
+            }, 10000);
+        } else if (attempts > 0) { // Показываем сообщение только если есть еще попытки
             messageEl.innerText = `Неверно! У вас осталось ${attempts} попыток`;
         }
     }
 });
-
 function resetGame() {
-    document.getElementById("labirinthGuess").disabled = false;
+    labirinthGuess.disabled = false;
     labirinthGuess.value = "";
     messageEl.innerText = "";
     levelEl.textContent = 'Уровень 1';
@@ -82,12 +93,7 @@ function resetGame() {
     maxNumberEl.dataset.value = 2;
     maxNumberEl.innerText = maxNumberEl.dataset.value;
     generateSecretNumber();
-}
-
-function levelIncrease() {
-    level++;
-    attempts += 1;
-    maxNumber += 3;
+    updateInputRange();
 }
 
 function increaseScore(startBonus, level) {
@@ -98,4 +104,4 @@ function increaseScore(startBonus, level) {
 }
 
 generateSecretNumber();
-
+updateInputRange();
