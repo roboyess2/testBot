@@ -11,7 +11,7 @@ class UserController {
 
     async getOneUser(req, res) {
         const id = req.params.id;
-        const user = await db.query('SELECT user_name FROM "user" WHERE telegram_id = $1', [id]);
+        const user = await db.query('SELECT user_name, coins FROM "user" WHERE telegram_id = $1', [id]);
         res.json(user.rows)
     }
 
