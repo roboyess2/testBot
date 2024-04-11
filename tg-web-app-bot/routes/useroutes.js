@@ -3,6 +3,8 @@ const router = new Router()
 const UserController = require('../controllers/controller')
 
 
-router.put('/coinstatus', UserController.Coinstatus);
+router.put('/updatecoins', UserController.updateCoins);
+router.get('/users', UserController.getUsers)
+router.get('/user/:id', UserController.getOneUser)
 
 module.exports = router;

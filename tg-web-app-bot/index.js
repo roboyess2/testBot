@@ -1,12 +1,12 @@
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
-const userouter = require('./routes/useroutes')
+const userRouter = require('./routes/useroutes')
 const { Client } = require('pg');
 const UserController = require('./controllers/controller');
 
 const secrets = require('./secret.json');
-const { connect_to_database, execute_query } = require('./DBcontext');
+const { connect_to_database, execute_query } = require('./db');
 
 const token = secrets.Quadro_SECRET;
 
@@ -21,12 +21,6 @@ bot.on('message', async (msg) => {
     const text = msg.text;
     const userId = msg.from.id;
 
-
-    const keyboardOptions = {
-        resize_keyboard: true, // Уменьшаем размер клавиатуры
-        one_time_keyboard: true // Клавиатура исчезнет после использования
-    };
-
     if (text === "/start") {
 
         await UserController.start(msg);
@@ -38,10 +32,11 @@ bot.on('message', async (msg) => {
                     keyboard: [
                         [{
                             text: 'Play',
-                            resize_keyboard: true,
-                            one_time_keyboard: true,
                         }]
-                    ]
+                    ],
+                    resize_keyboard: true,
+                    one_time_keyboard: true,
+
                 }
             });
     }
@@ -52,6 +47,11 @@ bot.on('message', async (msg) => {
 });
 
 
+app.use('/api', userRouter)
+
+app.get('/', (req, res) => {
+    res.send('NODEMON WORK')
+})
 
 const PORT = "8080";
 
