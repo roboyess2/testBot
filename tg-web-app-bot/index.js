@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
-const userRouter = require('./routes/useroutes')
+const userRouter = require('./routes/userRoutes')
 const { Client } = require('pg');
 const UserController = require('./controllers/controller');
 
