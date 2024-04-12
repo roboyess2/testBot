@@ -1,5 +1,9 @@
+// import {bot} from './index.js';
 const TelegramBot = require('node-telegram-bot-api');
 const db = require('../db');
+
+// const bot = new TelegramBot(token, { polling: true });
+
 
 class UserController {
     
@@ -11,6 +15,7 @@ class UserController {
 
     async getOneUser(req, res) {
         const id = req.params.id;
+        
         const user = await db.query('SELECT user_name, coins FROM "user" WHERE telegram_id = $1', [id]);
         res.json(user.rows)
     }

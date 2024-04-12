@@ -42,10 +42,6 @@ bot.on('message', async (msg) => {
                 parse_mode: 'HTML'
             });
     }
-    // if (text) {
-    //     await bot.sendMessage(chatId, text)
-    //     console.log(text)
-    // }
     if (text.toLowerCase() === 'пошел нахуй') {
         bot.sendMessage(chatId, "Сам пошел нахуй!")
         console.log(userId)
