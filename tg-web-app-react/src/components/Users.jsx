@@ -7,8 +7,8 @@ export const Users = ({items, isLoading}) => {
                 {
                     items.map((users) => {
                         return <li>
-                            <p>{users.user_name}</p>
-                            <p>{users.coins}</p>
+                            <p>Username: {users.user_name}</p>
+                            <p>Score:  {users.coins}</p>
                         </li>
                     })
                 }

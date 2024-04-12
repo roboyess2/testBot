@@ -21,8 +21,8 @@ class UserController {
     }
 
     async updateCoins(req, res) {
-            const {coins, telegram_id} = req.body;
-            const user = await db.query( 'UPDATE coins set coins = 1$ WHERE telegram_id = $2 RETURNING *', [coins, telegram_id]);
+            const {coins, userId} = req.body;
+            const user = await db.query( 'UPDATE "user" set coins = 1$ WHERE telegram_id = $2', [coins, userId]);
             res.json(user.rows[0])
     }
 
