@@ -1,4 +1,7 @@
 "use strict";
+
+const UserController = require('../testBot1/tg-web-app-bot/controllers/controller');
+
 const minerBtn = document.getElementById("miner");
 const minerGame = document.querySelector('.miner');
 const minerCoin = document.getElementById('minerBtn');

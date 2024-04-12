@@ -32,6 +32,7 @@ bot.on('message', async (msg) => {
                     keyboard: [
                         [{
                             text: 'Play',
+                            url: 't.me/quadrotestbot/quadro'
                         }]
                     ],
                     resize_keyboard: true,
