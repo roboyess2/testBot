@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
+import React from 'react'
+import {Header} from './components/Header'
+import {ProgressBar} from './components/ProgressBar'
+import {Miner} from './components/Miner'
+import {Paint} from './components/Paint'
+import {Labirinth} from './components/Labirinth'
 import './App.css';
 
 function App() {
+  const [visability, setVisabiliti] =  React.useState(true);
+
+  const handleChangeVisability = () => {
+    setVisabiliti(true)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <ProgressBar></ProgressBar>
+      <Miner></Miner>
+      <Paint></Paint>
+      <Labirinth></Labirinth>
     </div>
   );
 }
