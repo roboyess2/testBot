@@ -5,10 +5,10 @@ export const Users = ({items, isLoading}) => {
         <div>
             <ul>
                 {
-                    items.map((user) => {
+                    items.map((users) => {
                         return <li>
-                            <p>{user.user_name}</p>
-                            <p>{user.coins}</p>
+                            <p>{users.user_name}</p>
+                            <p>{users.coins}</p>
                         </li>
                     })
                 }
