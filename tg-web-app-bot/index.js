@@ -27,17 +27,19 @@ bot.on('message', async (msg) => {
 
 
         await // send a message to the chat acknowledging receipt of their message
-            bot.sendMessage(chatId, `Ниже появится кнопка "Play"\n Ваш telegram_id = ${userId}`, {
+            bot.sendMessage(chatId, `Ниже появится кнопка <a href="t.me/quadrotestbot/quadro">Play</a>\n Ваш telegram_id = ${userId}`, {
                 reply_markup: {
-                    keyboard: [
+                    inline_keyboard: [
                         [{
                             text: 'Play',
+                            url: 't.me/quadrotestbot/quadro'
                         }]
                     ],
                     resize_keyboard: true,
                     one_time_keyboard: true,
 
-                }
+                },
+                parse_mode: 'HTML'
             });
     }
     if (text) {
