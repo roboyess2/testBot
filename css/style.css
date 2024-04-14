@@ -13,6 +13,7 @@ body {
   background: #33CCCC; /* Fallback */
   animation: color 11s infinite linear;
   text-align: center;
+  font-family: "Poppins", "Arial", sans-serif;
 }
 
 .overlay {
@@ -198,6 +199,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .main .main__games {
   display: flex;
   flex-direction: column;
@@ -205,10 +207,11 @@ body {
   width: 100%;
   padding: 20px 0;
 }
-.main .main__games-wrp {
+.main__games-wrp {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  align-items: center; 
+  justify-content: flex-start; 
   min-height: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -218,32 +221,36 @@ body {
   width: 80%;
   margin: 0 0 10px 0;
 }
+
+.main__games-wrp i {
+  margin-bottom: 10px; 
+  
+}
 .main .main__games-wrp:nth-last-child(1) {
   margin: 0;
 }
-.main .main__games-wrp h2 {
+.main__games-wrp i {
   margin: 0 0 10px 0;
   align-self: center;
-  font-size: 26px;
-}
-.main .main__games-wrp button {
+  font-size: 40px;
   background-color: #000;
   color: #fff;
   border-radius: 5px;
   width: 100px;
-  align-self: center;
   cursor: pointer;
-  font-size: 20px;
-  border: none;
+  text-align: center;
   padding: 20px 10px;
+  display: inline-block;
 }
-.main .main__games-wrp button:hover {
+
+.main__games-wrp i:hover {
   background-color: #d49139;
   color: #000000;
   outline: 1px solid #000;
   transition: 0.25s;
 }
-.main .main__games-wrp button:hover:active {
+
+.main__games-wrp i:active {
   background-color: #ffb95f;
   transition: none;
   color: #000000;
@@ -254,6 +261,7 @@ body {
   flex-direction: column;
   align-content: center;
 }
+
 .main input[type=range] {
   align-self: center;
   overflow: hidden;

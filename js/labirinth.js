@@ -43,8 +43,7 @@ function levelIncrease() {
     maxNumber += 3;
     updateInputRange();
 }
-let messageShown = false; // Дополнительная переменная для отслеживания отображения сообщения
-
+let messageShown = false; 
 checkButton.addEventListener("click", function () {
     let guess = parseInt(labirinthGuess.value);
     if (isNaN(guess) || guess < 1 || guess > maxNumber) {
@@ -69,15 +68,15 @@ checkButton.addEventListener("click", function () {
         }
     } else {
         attempts--;
-        if (attempts === 0 && !messageShown) { // Проверка, было ли уже показано сообщение
+        if (attempts === 0 && !messageShown) { 
             messageEl.innerText = "Вы использовали все попытки, попробуйте снова через 10 секунд";
             labirinthGuess.disabled = true;
-            messageShown = true; // Устанавливаем флаг, что сообщение было показано
+            messageShown = true; 
             setTimeout(function() {
-                messageShown = false; // После таймера сбрасываем флаг
-                resetGame(); // Вызываем функцию resetGame после истечения таймера
+                messageShown = false; 
+                resetGame(); 
             }, 10000);
-        } else if (attempts > 0) { // Показываем сообщение только если есть еще попытки
+        } else if (attempts > 0) { 
             messageEl.innerText = `Неверно! У вас осталось ${attempts} попыток`;
         }
     }

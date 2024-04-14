@@ -7,6 +7,7 @@
     <title>Nash sait</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -21,22 +22,19 @@
                 <h2 class="header__nav-title">Menu</h2>
                 <ul class="header__nav-list">
                     <div class="main__games-wrp">
-                        <h2>Mine Coin</h2>
-                        <button id="miner" onclick="openMiner()">Play</button>
+                        <i class="fa-brands fa-bitcoin" id="miner" onclick="openMiner()"></i>
                     </div>
                     <div class="main__games-wrp">
-                        <h2>Paint</h2>
-                        <button id="paint" onclick="openPaint()">Play</button>
+                        <i class="fa-solid fa-palette" id="paint" onclick="openPaint()"></i>
                     </div>
                     <div class="main__games-wrp">
-                        <h2>Labirinth</h2>
-                        <button id="labirinth" onclick="openLabirinth()">Play</button>
+                        <i class="fa-solid fa-magnifying-glass-dollar" id="labirinth" onclick="openLabirinth()"></i>
                     </div>
                 </ul>
             </nav>
         </div>
     </header>
-
+   
     <main class="main">
         <section class="main__rating">
             <h2>Rating</h2>
@@ -79,8 +77,6 @@
             <p>"Права защищены" 2024©️</p>
         </div>
     </footer>
-
-
     <script src="./js/main.js"></script>
     <script src="./js/rating.js"></script>
     <script src="./js/miner.js"></script>
