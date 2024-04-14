@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/tg-web-app-react/static/css/main.71d622a2.css",
-    "main.js": "/tg-web-app-react/static/js/main.fb371609.js",
-    "static/media/coin.png": "/tg-web-app-react/static/media/coin.4f98778d3fff3cbdbedf.png",
-    "index.html": "/tg-web-app-react/index.html",
-    "main.71d622a2.css.map": "/tg-web-app-react/static/css/main.71d622a2.css.map",
-    "main.fb371609.js.map": "/tg-web-app-react/static/js/main.fb371609.js.map"
+    "main.css": "/testBot/static/css/main.71d622a2.css",
+    "main.js": "/testBot/static/js/main.1e861e6b.js",
+    "static/media/coin.png": "/testBot/static/media/coin.4f98778d3fff3cbdbedf.png",
+    "index.html": "/testBot/index.html",
+    "main.71d622a2.css.map": "/testBot/static/css/main.71d622a2.css.map",
+    "main.1e861e6b.js.map": "/testBot/static/js/main.1e861e6b.js.map"
   },
   "entrypoints": [
     "static/css/main.71d622a2.css",
-    "static/js/main.fb371609.js"
+    "static/js/main.1e861e6b.js"
   ]
 }
