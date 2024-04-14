@@ -7,9 +7,11 @@ message Add {
 contract Firstcontract with Deployable {
     
     counter: Int as uint32;
+    id: Int as uint32;
 
-    init() {
+    init(id: Int) {
         self.counter = 0 ;
+        self.id = id;
     }
 
     receive("increment"){
@@ -22,5 +24,9 @@ contract Firstcontract with Deployable {
 
     get fun counter(): Int {
         return self.counter;
+    }
+
+    get fun id(): Int{
+        return self.id;
     }
 }
