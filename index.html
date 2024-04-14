@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nash sait</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="overlay">
+    </div>
+    <header class="header">
+        <div class="header__wrp container">
+            <h1>Crypto app</h1>
+            <button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+            <nav class="header__nav">
+                <h2 class="header__nav-title">Menu</h2>
+                <ul class="header__nav-list">
+                    <div class="main__games-wrp">
+                        <h2>Mine Coin</h2>
+                        <button id="miner" onclick="openMiner()">Play</button>
+                    </div>
+                    <div class="main__games-wrp">
+                        <h2>Paint</h2>
+                        <button id="paint" onclick="openPaint()">Play</button>
+                    </div>
+                    <div class="main__games-wrp">
+                        <h2>Labirinth</h2>
+                        <button id="labirinth" onclick="openLabirinth()">Play</button>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="main__rating">
+            <h2>Rating</h2>
+            <h3>League</h3>
+            <p id="leagueName"></p>
+            <input id="ratingProgress" type="range" min="0">
+        </section>
+        <section class="main__current-game container">
+            <div class="main__current-game-wrp">
+                <h2>Game</h2>
+                <div class="main__current-coin-total">
+                    <h2>Score: <span id="scoreCounter" data-score="0">0</span></h2>
+                    <img class="main__current-coin" src="./img/coin.png" alt="coin">
+                </div>
+            </div>
+
+        </section>
+        <section class="game">
+            <div class="main__current-game-field">
+                <div class="miner container">
+                    <h2>Mine Coin</h2>
+                    <img id="minerBtn" class="main__current-game-coin" src="./img/coin.png" alt="coin">
+                </div>
+                <div class="paint container">
+                    <h2>Paint</h2>
+                </div>
+                <div class="labirinth container">
+                    <h2>Угадай число</h2>
+                    <h3 class="level"></h3>
+                    <p>Угадайте число от 1 до <span id="maxNumber" data-value="0"></span></p>
+                    <input type="number" id="labirinthGuess">
+                    <button id="checkButton">Проверить</button>
+                    <p id="message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrp container">
+            <p>"Права защищены" 2024©️</p>
+        </div>
+    </footer>
+
+
+    <script src="./js/main.js"></script>
+    <script src="./js/rating.js"></script>
+    <script src="./js/miner.js"></script>
+    <script src="./js/paint.js"></script>
+    <script src="./js/labirinth.js"></script>
+    <script src="./js/rules.js"></script>
+</body>
+
+</html>

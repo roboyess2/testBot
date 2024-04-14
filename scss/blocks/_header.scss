@@ -1,0 +1,125 @@
+.header {
+    color: #fff;
+
+    .header__wrp {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        padding: 20px 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: #000000;
+        z-index: 21;
+    }
+
+    .header__wrp h1 {
+        font-size: 36px;
+        margin: 0 0 0 10px;
+    }
+
+    .header__wrp button {
+        padding: 5px 15px;
+        background-color: #a9c2f0;
+        border-radius: 5px;
+        border: none;
+        margin: 0 10px;
+    }
+
+    .header__wrp button:hover {
+        transition: .3s;
+        background-color: #80a3e5;
+    }
+
+    .header__wrp button:hover:active {
+        transition: none;
+        background-color: #b3ceff;
+    }
+
+    .header__nav {
+        position: absolute;
+        top: 86px;
+        right: 0px;
+        width: 300px;
+        color: #000000;
+        background-color: #a4bce9;
+        box-sizing: border-box;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        animation-name: fadeInDown;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        border: 1px solid #000000;
+    }
+
+    .header__nav.active {
+        display: block;
+        animation-name: fadeInUp;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+    }
+
+    .header__nav-title {
+        text-align: center;
+    }
+
+    .header__nav-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__nav-item {
+        margin: 8px;
+    }
+
+    .header__nav-item a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 18px;
+    }
+
+    .main__games-wrp button {
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        width: 100px;
+        align-self: center;
+        cursor: pointer;
+        font-size: 20px;
+        border: none;
+        padding: 20px 10px;
+        outline: 1px solid #000;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(300px, 0, 0);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        z-index: 21;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        z-index: 21;
+    }
+
+    to {
+        transform: translate3d(300px, 0px, 0);
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+}
