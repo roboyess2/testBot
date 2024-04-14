@@ -2,25 +2,18 @@
 import React from 'react'
 import { Header } from './components/Header'
 import { ProgressBar } from './components/ProgressBar'
-import { Miner } from './components/Miner'
 import { Paint } from './components/Paint'
 import { Labirinth } from './components/Labirinth'
 import { Users } from './components/Users'
 import { User } from './components/User'
 import { Score } from './components/Score'
 import './App.css';
-
-const userId = 1488565248;
+let tg = window.Telegram.WebApp;
+const userId = 1488565248; //tg.initDataUnsafe.user.id
 
 function App() {
-  // const [visability, setVisabiliti] =  React.useState(true);
-
-  // const handleChangeVisability = () => {
-  //   setVisabiliti(true)
-  // }
   const [users, setUsers] = React.useState([]);
   const [oneUser, setOneUser] = React.useState([]);
-  const [score, setScore] = React.useState(0)
 
   React.useEffect(() => {
     fetch('http://localhost:8080/api/users')
@@ -33,6 +26,7 @@ function App() {
         alert("Error fetching users")
       })
   }, [])
+
   React.useEffect(() => {
     fetch(`http://localhost:8080/api/user/${userId}`)
       .then((res) => res.json())
@@ -41,31 +35,20 @@ function App() {
       })
       .catch((err) => {
         console.warn(err)
-        alert("Error fetching data")
+        alert(`Error fetching User:${userId}`)
       })
   }, [])
-  // React.useEffect(() => {
-  //   fetch(`http://localhost:8080/api/user/${userId}`)
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       setOneUser(result)
-  //     })
-  //     .catch((err) => {
-  //       console.warn(err)
-  //       alert("Error fetching data")
-  //     })
-  // }, [])
-  
+
+
   return (
     <div className="App">
       <Header />
       <ProgressBar />
-      {/* <Score score={score}/> */}
-      <Miner coins={score} user={userId}/>
+      <Score coins={oneUser.coins} telegram_id={userId}/>
       {/* <Paint></Paint>
       <Labirinth></Labirinth> */}
       <Users items={users}></Users>
-      <User item={oneUser}></User>
+      {/* <User item={oneUser}></User> */}
     </div>
   );
 }

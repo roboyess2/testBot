@@ -25,7 +25,6 @@ bot.on('message', async (msg) => {
 
         await UserController.start(msg);
 
-
         await // send a message to the chat acknowledging receipt of their message
             bot.sendMessage(chatId, `Ниже появится кнопка <a href="t.me/quadrotestbot/quadro">Play</a>\n Ваш telegram_id = ${userId}`, {
                 reply_markup: {
@@ -48,7 +47,6 @@ bot.on('message', async (msg) => {
     }
 
 });
-
 
 app.use('/api', userRouter)
 

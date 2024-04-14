@@ -6,24 +6,24 @@ const db = require('../db');
 
 
 class UserController {
-    
+
     async getUsers(req, res) {
-            const users = await db.query('SELECT user_name, coins FROM "user"');
-            console.log(users)
-            res.json(users.rows)
+        const users = await db.query('SELECT telegram_id, user_name, coins FROM "user"');
+        console.log(users)
+        res.json(users.rows)
     }
 
     async getOneUser(req, res) {
         const id = req.params.id;
-        
         const user = await db.query('SELECT user_name, coins FROM "user" WHERE telegram_id = $1', [id]);
-        res.json(user.rows)
+        res.json(user.rows[0])
     }
 
     async updateCoins(req, res) {
-            const {coins, userId} = req.body;
-            const user = await db.query( 'UPDATE "user" set coins = 1$ WHERE telegram_id = $2', [coins, userId]);
-            res.json(user.rows[0])
+        // const {telegram_id, coins } = req.params.id
+        const  {telegram_id, coins }  = req.body;
+        const user = await db.query('update "user" set coins = $1 where telegram_id = $2 returning *', [coins, telegram_id]);
+        res.json(user.rows[0])
     }
 
     async start(msg) {
@@ -38,6 +38,5 @@ class UserController {
         }
     }
 }
-
 
 module.exports = new UserController()
