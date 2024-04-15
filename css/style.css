@@ -10,84 +10,57 @@
 }
 
 body {
-  background: #33CCCC; /* Fallback */
-  animation: color 11s infinite linear;
+  background: #1A0F48;
   text-align: center;
   font-family: "Poppins", "Arial", sans-serif;
+  color:whitesmoke;
+  overflow: hidden;
 }
 
 .overlay {
   width: 100%;
-  height: 1000px;
-  z-index: 20;
-  display: none;
-  background-color: #000;
-  position: absolute;
-  opacity: 0.6;
-  animation: overlayFadeOut;
-  animation-duration: 0.5s;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.block {
-  display: block;
-  animation: overlayFadeIn;
-  animation-duration: 0.5s;
+.overlay span {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
 }
 
-@keyframes overlayFadeIn {
-  from {
-    transform: translate3d(0, 0px, 0);
-    opacity: 0;
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.6;
-  }
+.overlay span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
 }
-@keyframes overlayFadeOut {
-  from {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.6;
-    display: block;
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 0;
-  }
-}
-@keyframes startPage {
-  from {
-    transform: translate3d(0, 0px, 0);
-    opacity: 0;
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-@keyframes color {
+
+@keyframes animate {
   0% {
-    background: #33CCCC;
-  }
-  20% {
-    background: #33CC36;
-  }
-  40% {
-    background: #B8CC33;
-  }
-  60% {
-    background: #FCCA00;
-  }
-  80% {
-    background: #33CC36;
+    transform: translateY(calc(100vh + 50px)) scale(0); 
   }
   100% {
-    background: #33CCCC;
+    transform: translateY(-100vh) scale(1); 
   }
 }
+
 .header {
   color: #fff;
+  position: relative;
+  z-index: 2; 
 }
+
 .header .header__wrp {
   display: flex;
   flex-direction: row;
@@ -120,9 +93,9 @@ body {
 }
 .header .header__nav {
   position: absolute;
-  top: 86px;
+  top: 83px;
   right: 0px;
-  width: 300px;
+  width: 280px;
   color: #000000;
   background-color: #a4bce9;
   box-sizing: border-box;
@@ -143,12 +116,14 @@ body {
 .header .header__nav-title {
   text-align: center;
 }
+
 .header .header__nav-list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
 }
+
 .header .header__nav-item {
   margin: 8px;
 }
