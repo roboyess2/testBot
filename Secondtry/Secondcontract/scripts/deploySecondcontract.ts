@@ -1,11 +1,11 @@
 import { toNano } from '@ton/core';
-import { Firstcontract } from '../wrappers/Firstcontract';
+import { Secondcontract } from '../wrappers/Secondcontract';
 import { NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
-    const firstcontract = provider.open(await Firstcontract.fromInit(54325n));
+    const secondcontract = provider.open(await Secondcontract.fromInit(5432n));
 
-    await firstcontract.send(
+    await secondcontract.send(
         provider.sender(),
         {
             value: toNano('0.05'),
@@ -16,7 +16,7 @@ export async function run(provider: NetworkProvider) {
         }
     );
 
-    await provider.waitForDeploy(firstcontract.address);
+    await provider.waitForDeploy(secondcontract.address);
 
-    // run methods on `firstcontract`
+    // run methods on `secondcontract`
 }
