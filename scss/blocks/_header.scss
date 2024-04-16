@@ -1,5 +1,7 @@
 .header {
     color: #fff;
+    position: relative;
+    z-index: 2;
 
     .header__wrp {
         display: flex;
@@ -27,7 +29,7 @@
     }
 
     .header__wrp button:hover {
-        transition: .3s;
+        transition: 0.3s;
         background-color: #80a3e5;
     }
 
@@ -38,9 +40,9 @@
 
     .header__nav {
         position: absolute;
-        top: 86px;
+        top: 83px;
         right: 0px;
-        width: 300px;
+        width: 280px;
         color: #000000;
         background-color: #a4bce9;
         box-sizing: border-box;

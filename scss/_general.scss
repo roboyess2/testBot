@@ -10,30 +10,60 @@
 }
 
 body {
-    background: #33CCCC; /* Fallback */
-    animation: color 11s infinite linear;
+    background: #1A0F48;
     text-align: center;
+    font-family: "Poppins", "Arial", sans-serif;
+    color: whitesmoke;
+    overflow: hidden;
 }
 
 .overlay {
     width: 100%;
-    height: 1000px;
-    z-index: 20;
-    display: none;
-    background-color: #000;
-    position: absolute;
-    opacity: 0.6;
-    animation: overlayFadeOut;
-    animation-duration: 0.5s;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 calc(100% - 50px));
 }
 
-.block {
+.overlay span {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.overlay span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(calc(100vh + 50px)) scale(0);
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1);
+    }
+}
+
+/*.block {
     display: block;
     animation: overlayFadeIn;
     animation-duration: 0.5s;
-}
+}*/
 
-@keyframes overlayFadeIn {
+/*@keyframes overlayFadeIn {
     from {
         transform: translate3d(0, 0px, 0);
         opacity: 0;
@@ -94,5 +124,4 @@ body {
     100% {
         background: #33CCCC;
     }
-}
-
+}*/
