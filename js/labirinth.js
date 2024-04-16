@@ -4,6 +4,7 @@ const labirinthBtn = document.getElementById("labirinth");
 const labirinthGame = document.querySelector(".labirinth");
 
 function openLabirinth() {
+    const minerGame = document.querySelector('.miner');
     if (minerGame.classList.contains('game-block') || paintGame.classList.contains('game-block')) {
         minerGame.classList.remove('game-block');
         paintGame.classList.remove('game-block');
