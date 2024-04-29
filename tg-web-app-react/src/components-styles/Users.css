@@ -1,0 +1,26 @@
+.user__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.user__card {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user__card p {
+    margin: 0 0 5px 0;
+}
+
+.user__card p:last-child {
+    margin: 0;
+}

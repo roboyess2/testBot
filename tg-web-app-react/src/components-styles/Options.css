@@ -1,0 +1,33 @@
+.options {
+    width: 100%;
+    padding: 20px 0 0 0;
+}
+
+.options__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+
+.options__list li {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.options__list li:hover {
+    background-color: #6ed80b;
+    color: #000;
+}
+

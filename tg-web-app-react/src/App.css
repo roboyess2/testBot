@@ -16,8 +16,7 @@
 }
 
 body {
-  background: #33CCCC; /* Fallback */
-  animation: color 11s infinite linear;
+  background: #bb965e; /* Fallback */
   text-align: center;
 }
 
@@ -73,31 +72,5 @@ body {
   to {
       transform: translate3d(0, 0, 0);
       opacity: 1;
-  }
-}
-
-@keyframes color {
-  0% {
-      background: #33CCCC;
-  }
-
-  20% {
-      background: #33CC36;
-  }
-
-  40% {
-      background: #B8CC33;
-  }
-
-  60% {
-      background: #FCCA00;
-  }
-
-  80% {
-      background: #33CC36;
-  }
-
-  100% {
-      background: #33CCCC;
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "tg-web-app-react",
   "version": "0.1.0",
-  "homepage": "https://roboyess2.github.io/tg-web-app-react",
+  "homepage": "https://roboyess2.github.io/testBot",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
