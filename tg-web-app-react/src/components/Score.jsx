@@ -10,19 +10,20 @@ export const Score = ({ coins, user_id }) => {
     console.log(user_id)
 
     React.useEffect(() => {
+
         fetch('http://localhost:8080/api/user', {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ telegram_id: 1488565248, coins: 800 })
+            body: JSON.stringify({ telegram_id: 1488565248, coins: 8000 })
         })
         setScore(coins)
         console.log('coins', coins)
     })
 
     async function handlePlusCoin() {
-        setScore(score + 1)
+        setScore((prev) => prev + 1)
 
         await fetch('http://localhost:8080/api/user', {
             method: 'PUT',

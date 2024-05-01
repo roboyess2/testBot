@@ -21,15 +21,15 @@ function App() {
   // Один юзер
   React.useEffect(() => {
     fetch(`http://localhost:8080/api/user/${userId}`)
-        .then((res) => res.json())
-        .then((result) => {
-            setOneUser(result)
-        })
-        .catch((err) => {
-            console.warn(err)
-            alert(`Error fetching User:${userId}`)
-        })
-}, [])
+      .then((res) => res.json())
+      .then((result) => {
+        setOneUser(result)
+      })
+      .catch((err) => {
+        console.warn(err)
+        alert(`Error fetching User:${userId}`)
+      })
+  }, [])
 
   // Все юзеры 
   React.useEffect(() => {
@@ -48,8 +48,8 @@ function App() {
     <div className="App">
       <Header />
       <ProgressBar />
-    
-      <Score coins={oneUser.coins} telegram_id={userId}/>
+
+      <Score coins={oneUser.coins} telegram_id={userId} />
 
       <br></br>
       {/* <Paint></Paint>
